@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 1080px){
+  html {
+      font-size: 93.75%;
+  }
+}
+@media (max-width: 720px){
+  html {
+      font-size: 87.5%;
+  }
+}
+body { 
+background: #171923;
+color: #E2E8F0;
+}
+body, input, textarea, button, select {
+  font: 400 1rem 'Ubuntu', sans-serif;
+}
+button {
+  cursor: pointer;
+}
+a { 
+  color: inherit;
+  text-decoration: none;
+}
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+nav h1 {
+  font-weight: 300;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+.pratica1 {
+  border-radius: 1.25rem;
+  background: linear-gradient(220.94deg, #6F57F9 14.43%, #342680 85.28%);
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pratica1 a {
+  width: 50px;
+  height: 35px;
+}
+.pratica1 a img {
+  width: 100%;
+  height: 100%;
+  transition: .7s ease;
+}
+.pratica1 a img:hover {
+  transform: scale(1.09);
+}
+footer{
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 3px solid #fff;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+footer h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+footer h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+footer p {
+  font-size: 1.125rem;
+
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.imgstech {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.imgstech img {
+  width: 70px;
+  height: 78px;
+}
+.imgstech a {
+  transition: .7s ease;
+}
+.imgstech a:hover {
+  transform: scale(1.1);
+}
+.nameimg a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nameimg img {
+  margin-left: 16px;
+  width: 50px;
+  height: 35px;
+}
