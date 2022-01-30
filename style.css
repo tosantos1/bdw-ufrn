@@ -49,14 +49,14 @@ main {
   border-radius: 1.25rem;
   background: linear-gradient(220.94deg, #6F57F9 14.43%, #342680 85.28%);
   padding: 1rem;
+  margin: 2rem 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .pratica1 a {
-  width: 50px;
-  height: 35px;
+  width: 200px;
 }
 .pratica1 a img {
   width: 100%;
