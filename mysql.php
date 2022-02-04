@@ -27,33 +27,33 @@
     ?>
 
      <?php
-  $servername = "sql205.epizy.com";
-  $username = "epiz_30955639";
-  $password = "yKCtZAz4Nk2Z";
-  $dbname = "epiz_30955639_meubanco";
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
+        $servername = "sql205.epizy.com";
+        $username = "epiz_30955639";
+        $password = "yKCtZAz4Nk2Z";
+        $dbname = "epiz_30955639_meubanco";
 
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-  $sql = "SELECT * FROM usuario";
-  $result = $conn->query($sql);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-  if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - Name: " . $row["nome"]. " " . $row["email"]. "<br>";
-    }
-  } else {
-    echo "0 results";
-  }
-  $conn->close();
+        $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('".$nome."', '".$email."', '".$senha."')";
 
-  ?>
+        if ($conn ->query($sql) === TRUE) {
+            echo "Usuario adicionado com sucesso";
+        } else {
+            echo "Error: " .$sql ."<br>" . $conn->error;
+        }
+        
+        $conn->close();
+     ?>
 
   </main>
   

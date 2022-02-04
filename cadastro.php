@@ -24,9 +24,17 @@
         Senha
         <input type="password" name="senha">
         <input type="submit" value="Cadastrar">
-    <br>
+    </br>
 
         <a href="index.php" class="bnt-voltar-cadastro" > Voltar </a>
+    </br>
+      <span>
+        <?php   
+            if($_GET['msg']){
+                echo $_GET['msg']."</br>";
+            }   
+        ?>
+     </span>
   </main>
   
   <footer>

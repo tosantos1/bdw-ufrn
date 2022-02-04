@@ -1,51 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banco de dados para WEB</title>
+  <link rel="stylesheet" href="style.css">
+  <title>BDW</title>
 </head>
+
 <body>
-  <h1>Sistema WEB</h1>
+  <header>
+    <nav>
+      <img src="/image/logo.png" alt="Logo Tiago Oliveira">
+      <h1>Tiago Oliveira</h1>
+    </nav>
+  </header>
+  <main>
+    <div class="pratica1">
+      <p>Pratica 1 - Publicar HTML</p>
+      <a href="">
+        <img src="/image/youtube.png" alt="Logo Youtube">
+      </a>
+    </div>
+    <div class="pratica1">
+      <a href="mysql.php">
+        Banco de dados MySQL
+      </a>
+      <a href="/">
+        <img src="/image/youtube.png" alt="Logo Youtube">
+      </a>
+    </div>
+    <div class="pratica1">
+      <a href="cadastro.php">
+        Cadastro
+      </a>
+      <a href="/">
+        <img src="/image/youtube.png" alt="Logo Youtube">
+      </a>
+    </div>
+    <div class="pratica1">
+      <a href="login.php">
+        Login
+      </a>
+      <a href="/">
+        <img src="/image/youtube.png" alt="Logo Youtube">
+      </a>
+    </div>
+  </main>
+  
+  <footer>
+    <h1>Banco de dados para Web</h1>
+    <h2>Sobre</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est incidunt tenetur ab, nemo sed quia odio
+      omnis eum cumque molestiae. Laborum a cum inventore et odit eveniet, expedita possimus.</p>
+    <div class="linguagens">
+      <h2>Tecnologias</h2>
+      <div class="imgstech">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="/image/HTML.png" alt="Logo HTML"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="/image/CSS.png" alt="Logo HTML"></a>
 
-  <?php 
-    $nome = "Tiago";
-    $idade = "23";
-    $altura = "1.75";
-    echo "Meu primeiro nome é " .$nome "tenho" .$idade "anos e " .$altura "de altura.";
-    echo "<br> soma " .($idade + $altura);
-    $texto ="Era uma vez um programador. ";
-    echo "<p>Tamanho: " .strlen($texto) . "</p>";
-  ?>
 
-  <?php
-  $servername = "sql100.epizy.com";
-  $username = "epiz_30944840";
-  $password = "fiBnu3RYi8P";
-  $dbname = "epiz_30944840_teste";
+      </div>
+    </div>
+    <h2>Referências</h2>
+    <div class="nameimg">
+      <a href="https://www.youtube.com/channel/UCWUVAPzYPj1sk6krbnyIgMg"> Aquiles Burlamaqui <img
+          src="/../../image/youtube.png" alt="Logo Youtube"></a>
+    </div>
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
+  </footer>
 
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-  $sql = "SELECT * FROM usuario";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - Name: " . $row["nome"]. " " . $row["email"]. "<br>";
-    }
-  } else {
-    echo "0 results";
-  }
-  $conn->close();
-
-  ?>
+   
 </body>
+
 </html>

@@ -16,11 +16,36 @@
   <main>
     <h1> Salvando... </h1>
     <br>
-    <?php   
-        echo $_POST["email"]."<br>";
-        echo $_POST["nome"]."<br>";
-        echo $_POST["senha"]."<br>";
-    ?>
+
+    <?php
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $senha = sha1($_POST['senha']);
+
+            $servername = "sql205.epizy.com";
+            $username = "epiz_30955639";
+            $password = "yKCtZAz4Nk2Z";
+            $dbname = "epiz_30955639_meubanco";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('".$nome."', '".$email."', '".$senha."')";
+
+            if ($conn ->query($sql) === TRUE) {
+                header('Location: cadastro.php?msg=Usuario cadastro com sucesso!');
+                die();
+            } else {
+                echo "Error: " .$sql ."<br>" . $conn->error;
+            }
+            
+            $conn->close();
+        ?>
     <br>
 
         <a href="index.php" class="bnt-voltar-cadastro" > Voltar </a>
